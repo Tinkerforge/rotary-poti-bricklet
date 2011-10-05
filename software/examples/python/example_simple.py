@@ -5,8 +5,8 @@ HOST = "localhost"
 PORT = 4223
 UID = "2wx" # Change to your UID
 
-from ip_connection import IPConnection
-from bricklet_rotary_poti import RotaryPoti
+from tinkerforge.ip_connection import IPConnection
+from tinkerforge.bricklet_rotary_poti import RotaryPoti
 
 if __name__ == "__main__":
     ipcon = IPConnection(HOST, PORT) # Create ip connection to brickd

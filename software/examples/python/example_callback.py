@@ -5,8 +5,8 @@ HOST = "localhost"
 PORT = 4223
 UID = "2wx" # Change to your UID
 
-from ip_connection import IPConnection
-from bricklet_rotary_poti import RotaryPoti
+from tinkerforge.ip_connection import IPConnection
+from tinkerforge.bricklet_rotary_poti import RotaryPoti
 
 # Callback function for position callback (parameter has range -150 to 150)
 def cb_position(position):
