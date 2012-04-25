@@ -16,9 +16,8 @@ class Example
 	{
 		IPConnection ipcon = new IPConnection(HOST, PORT); // Create connection to brickd
 		BrickletRotaryPoti poti = new BrickletRotaryPoti(UID); // Create device object
-		ipcon.AddDevice(poti); // Add device to ip connection
+		ipcon.AddDevice(poti); // Add device to IP connection
 		// Don't use device before it is added to a connection
-
 
 		// Set Period for position callback to 0.05s (50ms)
 		// Note: The position callback is only called every second if the 
@@ -30,5 +29,5 @@ class Example
 
 		System.Console.WriteLine("Press ctrl+c to exit");
 		ipcon.JoinThread();
-    }
+	}
 }

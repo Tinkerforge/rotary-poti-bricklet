@@ -11,13 +11,11 @@ public class ExampleCallback {
 	public static void main(String args[]) throws Exception {
 		// Create connection to brickd
 		IPConnection ipcon = new IPConnection(host, port); // Can throw IOException
-
 		BrickletRotaryPoti rp = new BrickletRotaryPoti(UID); // Create device object
 
-		// Add device to ip connection
+		// Add device to IP connection
 		ipcon.addDevice(rp); // Can throw IPConnection.TimeoutException
 		// Don't use device before it is added to a connection
-		
 
 		// Set Period for position callback to 0.05s (50ms)
 		// Note: The position callback is only called every second if the 
@@ -30,7 +28,7 @@ public class ExampleCallback {
 				System.out.println("Position: " + position);
 			}
 		});
-		
+
 		System.out.println("Press ctrl+c to exit");
 		ipcon.joinThread();
 	}

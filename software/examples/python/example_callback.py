@@ -13,10 +13,10 @@ def cb_position(position):
     print('Position: ' + str(position))
 
 if __name__ == "__main__":
-    ipcon = IPConnection(HOST, PORT) # Create ip connection to brickd
+    ipcon = IPConnection(HOST, PORT) # Create IP connection to brickd
 
     poti = RotaryPoti(UID) # Create device object
-    ipcon.add_device(poti) # Add device to ip connection
+    ipcon.add_device(poti) # Add device to IP connection
     # Don't use device before it is added to a connection
 
     # Set Period for position callback to 0.05s (50ms)
