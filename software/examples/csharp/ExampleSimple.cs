@@ -14,8 +14,7 @@ class Example
 		// Don't use device before it is added to a connection
 
 		// Get current position of poti (return value has range -150 to 150) 
-		short position;
-		poti.GetPosition(out position);
+		short position = poti.GetPosition();
 
 		System.Console.WriteLine("Position: " + position);
 
