@@ -21,7 +21,7 @@ ipcon.add_device rp # Add device to IP connection
 rp.set_position_callback_period 50
 
 # Register position callback (parameter has range -150 to 150)
-rp.register_callback BrickletRotaryPoti::CALLBACK_POSITION, do |position|
+rp.register_callback(BrickletRotaryPoti::CALLBACK_POSITION) do |position|
   puts "Position: #{position}"
 end
 
