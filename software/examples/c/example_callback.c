@@ -42,6 +42,7 @@ int main() {
 	                              ROTARY_POTI_CALLBACK_POSITION, 
 	                              cb_position);
 
-	printf("Press ctrl+c to close\n");
-	ipcon_join_thread(&ipcon); // Join mainloop of IP connection
+	printf("Press key to exit\n");
+	getchar();
+	ipcon_destroy(&ipcon);
 }
