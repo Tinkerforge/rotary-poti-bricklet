@@ -13,11 +13,11 @@ def cb_position(position):
     print('Position: ' + str(position))
 
 if __name__ == "__main__":
-    ipcon = IPConnection(HOST, PORT) # Create IP connection to brickd
+    ipcon = IPConnection() # Create IP connection
+    poti = RotaryPoti(UID, ipcon) # Create device object
 
-    poti = RotaryPoti(UID) # Create device object
-    ipcon.add_device(poti) # Add device to IP connection
-    # Don't use device before it is added to a connection
+    ipcon.connect(HOST, PORT) # Connect to brickd
+    # Don't use device before ipcon is connected
 
     # Set Period for position callback to 0.05s (50ms)
     # Note: The position callback is only called every 50ms if the 
@@ -28,4 +28,3 @@ if __name__ == "__main__":
     poti.register_callback(poti.CALLBACK_POSITION, cb_position)
 
     raw_input('Press key to exit\n') # Use input() in Python 3
-    ipcon.destroy()
