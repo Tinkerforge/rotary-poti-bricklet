@@ -7,15 +7,13 @@ public class ExampleCallback {
 	private static final String UID = "ABC"; // Change to your UID
 	
 	// Note: To make the example code cleaner we do not handle exceptions. Exceptions you
-	//       might normally want to catch are described in the commnents below
+	//       might normally want to catch are described in the documentation
 	public static void main(String args[]) throws Exception {
-		// Create connection to brickd
-		IPConnection ipcon = new IPConnection(host, port); // Can throw IOException
-		BrickletRotaryPoti rp = new BrickletRotaryPoti(UID); // Create device object
+		IPConnection ipcon = new IPConnection(); // Create IP connection
+		BrickletRotaryPoti rp = new BrickletRotaryPoti(UID, ipcon); // Create device object
 
-		// Add device to IP connection
-		ipcon.addDevice(rp); // Can throw IPConnection.TimeoutException
-		// Don't use device before it is added to a connection
+		ipcon.connect(host, port); // Connect to brickd
+		// Don't use device before ipcon is connected
 
 		// Set Period for position callback to 0.05s (50ms)
 		// Note: The position callback is only called every second if the 
@@ -30,6 +28,5 @@ public class ExampleCallback {
 		});
 
 		System.console().readLine("Press key to exit\n");
-		ipcon.destroy();
 	}
 }
