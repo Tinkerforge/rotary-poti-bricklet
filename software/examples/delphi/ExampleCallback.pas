@@ -12,7 +12,7 @@ type
     ipcon: TIPConnection;
     rp: TBrickletRotaryPoti;
   public
-    procedure PositionCB(const position: smallint);
+    procedure PositionCB(sender: TObject; const position: smallint);
     procedure Execute;
   end;
 
@@ -25,22 +25,22 @@ var
   e: TExample;
 
 { Callback function for position callback (parameter has range 0-100) }
-procedure TExample.PositionCB(const position: smallint);
+procedure TExample.PositionCB(sender: TObject; const position: smallint);
 begin
   WriteLn(Format('Position: %d', [position]));
 end;
 
 procedure TExample.Execute;
 begin
-  { Create IP connection to brickd }
-  ipcon := TIPConnection.Create(HOST, PORT);
+  { Create IP connection }
+  ipcon := TIPConnection.Create();
 
   { Create device object }
-  rp := TBrickletRotaryPoti.Create(UID);
+  rp := TBrickletRotaryPoti.Create(UID, ipcon);
 
-  { Add device to IP connection }
-  ipcon.AddDevice(rp);
-  { Don't use device before it is added to a connection }
+  { Connect to brickd }
+  ipcon.Connect(HOST, PORT);
+  { Don't use device before ipcon is connected }
 
   { Set Period for position callback to 0.05s (50ms)
     Note: The position callback is only called every 50ms if the
@@ -52,7 +52,6 @@ begin
 
   WriteLn('Press key to exit');
   ReadLn;
-  ipcon.Destroy;
 end;
 
 begin
