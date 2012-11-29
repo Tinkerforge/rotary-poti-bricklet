@@ -10,11 +10,11 @@ $host = 'localhost';
 $port = 4223;
 $uid = 'ABC'; // Change to your UID
 
-$ipcon = new IPConnection($host, $port); // Create IP connection to brickd
-$poti = new BrickletRotaryPoti($uid); // Create device object
+$ipcon = new IPConnection(); // Create IP connection
+$poti = new BrickletRotaryPoti($uid, $ipcon); // Create device object
 
-$ipcon->addDevice($poti); // Add device to IP connection
-// Don't use device before it is added to a connection
+$ipcon->connect($host, $port); // Connect to brickd
+// Don't use device before ipcon is connected
 
 // Get current position of poti (return value has range -150 to 150)
 $position = $poti->getPosition();
@@ -23,6 +23,5 @@ echo "Position: $position\n";
 
 echo "Press key to exit\n";
 fgetc(fopen('php://stdin', 'r'));
-$ipcon->destroy();
 
 ?>

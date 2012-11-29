@@ -16,11 +16,11 @@ function cb_position($position)
     echo "Position: $position\n";
 }
 
-$ipcon = new IPConnection($host, $port); // Create IP connection to brickd
-$poti = new BrickletRotaryPoti($uid); // Create device object
+$ipcon = new IPConnection(); // Create IP connection
+$poti = new BrickletRotaryPoti($uid, $ipcon); // Create device object
 
-$ipcon->addDevice($poti); // Add device to IP connection
-// Don't use device before it is added to a connection
+$ipcon->connect($host, $port); // Connect to brickd
+// Don't use device before ipcon is connected
 
 // Set Period for position callback to 0.05s (50ms)
 // Note: The position callback is only called every 50ms if the 
