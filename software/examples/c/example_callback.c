@@ -10,6 +10,8 @@
 
 // Callback function for position callback (parameter has range -150 to 150)
 void cb_position(int16_t position, void *user_data) {
+	(void)user_data; // avoid unused parameter warning
+
 	printf("Position: %d\n", position);
 }
 
@@ -36,9 +38,9 @@ int main() {
 
 	// Register position callback to function cb_position
 	rotary_poti_register_callback(&poti,
-	                              ROTARY_POTI_CALLBACK_POSITION, 
+	                              ROTARY_POTI_CALLBACK_POSITION,
 	                              cb_position,
-								  NULL);
+	                              NULL);
 
 	printf("Press key to exit\n");
 	getchar();
