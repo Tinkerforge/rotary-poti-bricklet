@@ -7,7 +7,7 @@ class Example
 	private static string UID = "ABC"; // Change to your UID
 
 	// Callback function for position callback (parameter has range -150 to 150) 
-	static void PositionCB(object sender, short position)
+	static void PositionCB(BrickletRotaryPoti sender, short position)
 	{
 		System.Console.WriteLine("Position: " + position);
 	}
