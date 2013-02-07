@@ -28,3 +28,4 @@ if __name__ == "__main__":
     poti.register_callback(poti.CALLBACK_POSITION, cb_position)
 
     raw_input('Press key to exit\n') # Use input() in Python 3
+    ipcon.disconnect()

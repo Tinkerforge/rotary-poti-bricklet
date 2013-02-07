@@ -22,3 +22,4 @@ puts "Position: #{position}"
 
 puts 'Press key to exit'
 $stdin.gets
+ipcon.disconnect
