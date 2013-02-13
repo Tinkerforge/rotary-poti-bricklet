@@ -21,7 +21,7 @@ class Example
 		// Don't use device before ipcon is connected
 
 		// Set Period for position callback to 0.05s (50ms)
-		// Note: The position callback is only called every second if the 
+		// Note: The position callback is only called every 50ms if the
 		//       position has changed since the last call!
 		poti.SetPositionCallbackPeriod(50);
 
