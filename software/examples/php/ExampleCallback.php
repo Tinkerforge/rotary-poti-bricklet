@@ -6,20 +6,20 @@ require_once('Tinkerforge/BrickletRotaryPoti.php');
 use Tinkerforge\IPConnection;
 use Tinkerforge\BrickletRotaryPoti;
 
-$host = 'localhost';
-$port = 4223;
-$uid = 'ABC'; // Change to your UID
+const HOST = 'localhost';
+const PORT = 4223;
+const UID = 'ABC'; // Change to your UID
 
 # Callback function for position callback (parameter has range -150 to 150)
 function cb_position($position)
 {
-    echo "Position: $position\n";
+	echo "Position: $position\n";
 }
 
 $ipcon = new IPConnection(); // Create IP connection
-$poti = new BrickletRotaryPoti($uid, $ipcon); // Create device object
+$poti = new BrickletRotaryPoti(UID, $ipcon); // Create device object
 
-$ipcon->connect($host, $port); // Connect to brickd
+$ipcon->connect(HOST, PORT); // Connect to brickd
 // Don't use device before ipcon is connected
 
 // Set Period for position callback to 0.05s (50ms)
