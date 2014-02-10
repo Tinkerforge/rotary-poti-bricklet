@@ -15,8 +15,8 @@ sub cb_position
 	print "\nPosition: $position\n";
 }
     
-my $ipcon = IPConnection->new(); # Create IP connection
-my $poti = BrickletRotaryPoti->new(&UID, $ipcon); # Create device object
+my $ipcon = Tinkerforge::IPConnection->new(); # Create IP connection
+my $poti = Tinkerforge::BrickletRotaryPoti->new(&UID, $ipcon); # Create device object
 
 $ipcon->connect(&HOST, &PORT); # Connect to brickd
 # Don't use device before ipcon is connected
