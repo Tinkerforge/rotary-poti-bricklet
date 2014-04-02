@@ -14,8 +14,9 @@ $ipcon->connect(&HOST, &PORT); # Connect to brickd
 # Don't use device before ipcon is connected
 
 # Get current position of poti (return value has range -150 to 150)
-print "\nPosition: ".$poti->get_position()."\n";
+my $position = $poti->get_position();
+print "Position: $position\n";
 
-print "\nPress any key to exit...\n";
+print "Press any key to exit...\n";
 <STDIN>;
 $ipcon->disconnect();

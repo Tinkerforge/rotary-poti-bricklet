@@ -10,9 +10,9 @@ use constant UID => 'eZj'; # Change to your UID
 # Callback function for position callback (parameter has range -150 to 150)
 sub cb_position
 {
-	my ($position) = @_;
+    my ($position) = @_;
 
-	print "\nPosition: $position\n";
+    print "Position: $position\n";
 }
     
 my $ipcon = Tinkerforge::IPConnection->new(); # Create IP connection
@@ -29,6 +29,6 @@ $poti->set_position_callback_period(50);
 # Register position callback to function cb_position
 $poti->register_callback($poti->CALLBACK_POSITION, 'cb_position');
 
-print "\nPress any key to exit...\n";
+print "Press any key to exit...\n";
 <STDIN>;
 $ipcon->disconnect();
