@@ -1,4 +1,4 @@
-function octave_example_simple
+function octave_example_simple()
     more off;
 
     HOST = "localhost";
@@ -18,5 +18,3 @@ function octave_example_simple
     input("Press any key to exit...\n", "s");
     ipcon.disconnect();
 end
-
-
