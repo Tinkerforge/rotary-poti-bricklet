@@ -18,13 +18,13 @@ function matlab_example_callback
     poti.setPositionCallbackPeriod(1000);
 
     % Register position callback to function cb_position
-    set(poti, 'PositionCallback', @(h, e)cb_position(e.position));
+    set(poti, 'PositionCallback', @(h, e) cb_position(e));
 
-    input('\nPress any key to exit...\n', 's');
+    input('Press any key to exit...\n', 's');
     ipcon.disconnect();
 end
 
 % Callback function for position callback (parameter has range -150 to 150)
-function cb_position(position_value)
-    fprintf('Position: %g\n', position_value);
+function cb_position(e)
+    fprintf('Position: %g\n', e.position);
 end

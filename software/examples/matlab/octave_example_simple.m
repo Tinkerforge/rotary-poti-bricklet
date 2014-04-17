@@ -13,10 +13,9 @@ function octave_example_simple
 
     % Get current position of poti (return value has range -150 to 150)
     position = poti.getPosition();
-
     fprintf('Position: %s\n', position.toString());
 
-    input("\nPress any key to exit...\n", "s");
+    input("Press any key to exit...\n", "s");
     ipcon.disconnect();
 end
 

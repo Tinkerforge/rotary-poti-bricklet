@@ -14,14 +14,8 @@ function matlab_example_callback
 
     % Get current position of poti (return value has range -150 to 150)
     position = poti.getPosition();
-
     fprintf('Position: %g\n', position);
 
-    input('\nPress any key to exit...\n', 's');
+    input('Press any key to exit...\n', 's');
     ipcon.disconnect();
-end
-
-% Callback function for position callback (parameter has range -150 to 150)
-function cb_position(position_value)
-    fprintf('POsition: %g\n', position_value);
 end
