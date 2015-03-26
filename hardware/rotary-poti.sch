@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Fr 30 Dez 2011 10:17:46 CET
+EESchema Schematic File Version 2  date Mo 14 Jan 2013 13:36:03 CET
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -30,13 +30,13 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:tinkerforge
-EELAYER 25  0
+EELAYER 27 0
 EELAYER END
-$Descr A4 11700 8267
+$Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Rotary Poti Bricklet"
-Date "30 dec 2011"
+Date "14 jan 2013"
 Rev "1.1"
 Comp "Tinkerforge GmbH"
 Comment1 "Licensed under CERN OHL v.1.1"
@@ -126,7 +126,7 @@ U 1 1 4C6534CF
 P 10650 6500
 F 0 "U2" H 10700 6550 60  0001 C CNN
 F 1 "DRILL" H 10650 6500 60  0000 C CNN
-F 2 "Drill" H 10650 6500 60  0001 C CNN
+F 2 "DRILL_NP" H 10650 6500 60  0001 C CNN
 	1    10650 6500
 	1    0    0    -1  
 $EndComp
@@ -136,7 +136,7 @@ U 1 1 4C6534CD
 P 10650 6700
 F 0 "U3" H 10700 6750 60  0001 C CNN
 F 1 "DRILL" H 10650 6700 60  0000 C CNN
-F 2 "Drill" H 10650 6700 60  0001 C CNN
+F 2 "DRILL_NP" H 10650 6700 60  0001 C CNN
 	1    10650 6700
 	1    0    0    -1  
 $EndComp
@@ -146,7 +146,7 @@ U 1 1 4C6534CA
 P 10950 6700
 F 0 "U5" H 11000 6750 60  0001 C CNN
 F 1 "DRILL" H 10950 6700 60  0000 C CNN
-F 2 "Drill" H 10950 6700 60  0001 C CNN
+F 2 "DRILL_NP" H 10950 6700 60  0001 C CNN
 	1    10950 6700
 	1    0    0    -1  
 $EndComp
@@ -156,7 +156,7 @@ U 1 1 4C6534C3
 P 10950 6500
 F 0 "U4" H 11000 6550 60  0001 C CNN
 F 1 "DRILL" H 10950 6500 60  0000 C CNN
-F 2 "Drill" H 10950 6500 60  0001 C CNN
+F 2 "DRILL_NP" H 10950 6500 60  0001 C CNN
 	1    10950 6500
 	1    0    0    -1  
 $EndComp
