@@ -51,8 +51,7 @@
                 poti.on(Tinkerforge.BrickletRotaryPoti.CALLBACK_POSITION,
                     // Callback function for position callback (parameter has range -150 to 150)
                     function(position) {
-                        textArea.value += 'Position: '+position;
-                        textArea.value += '\n';
+                        textArea.value += 'Position: '+position+'\n';
                         textArea.scrollTop = textArea.scrollHeight;
                     }
                 );
