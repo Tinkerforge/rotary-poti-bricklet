@@ -15,7 +15,7 @@ function matlab_example_callback()
     % Set Period for position callback to 0.05s (50ms)
     % Note: The position callback is only called every 50ms if the 
     %       position has changed since the last call!
-    poti.setPositionCallbackPeriod(1000);
+    poti.setPositionCallbackPeriod(50);
 
     % Register position callback to function cb_position
     set(poti, 'PositionCallback', @(h, e) cb_position(e));
