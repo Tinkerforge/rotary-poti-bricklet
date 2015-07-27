@@ -5,7 +5,7 @@
 
 #define HOST "localhost"
 #define PORT 4223
-#define UID "2wx" // Change to your UID
+#define UID "XYZ" // Change to your UID
 
 int main() {
 	// Create IP connection
@@ -13,8 +13,8 @@ int main() {
 	ipcon_create(&ipcon);
 
 	// Create device object
-	RotaryPoti poti;
-	rotary_poti_create(&poti, UID, &ipcon); 
+	RotaryPoti rp;
+	rotary_poti_create(&rp, UID, &ipcon);
 
 	// Connect to brickd
 	if(ipcon_connect(&ipcon, HOST, PORT) < 0) {
@@ -25,8 +25,8 @@ int main() {
 
 	// Get current position (value has range -150 to 150)
 	int16_t position;
-	if(rotary_poti_get_position(&poti, &position) < 0) {
-		fprintf(stderr, "Could not get value, probably timeout\n");
+	if(rotary_poti_get_position(&rp, &position) < 0) {
+		fprintf(stderr, "Could not get position, probably timeout\n");
 		exit(1);
 	}
 

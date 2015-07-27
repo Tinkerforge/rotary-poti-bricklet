@@ -5,7 +5,7 @@
 
 #define HOST "localhost"
 #define PORT 4223
-#define UID "2wx" // Change to your UID
+#define UID "XYZ" // Change to your UID
 
 // Callback function for position callback (parameter has range -150 to 150)
 void cb_position(int16_t position, void *user_data) {
@@ -20,8 +20,8 @@ int main() {
 	ipcon_create(&ipcon);
 
 	// Create device object
-	RotaryPoti poti;
-	rotary_poti_create(&poti, UID, &ipcon); 
+	RotaryPoti rp;
+	rotary_poti_create(&rp, UID, &ipcon);
 
 	// Connect to brickd
 	if(ipcon_connect(&ipcon, HOST, PORT) < 0) {
@@ -30,13 +30,13 @@ int main() {
 	}
 	// Don't use device before ipcon is connected
 
-	// Set Period for position callback to 0.05s (50ms)
-	// Note: The position callback is only called every 50ms if the 
-	//       position has changed since the last call!
-	rotary_poti_set_position_callback_period(&poti, 50);
+	// Set period for position callback to 0.05s (50ms)
+	// Note: The position callback is only called every 0.05 seconds
+	//       if the position has changed since the last call!
+	rotary_poti_set_position_callback_period(&rp, 50);
 
 	// Register position callback to function cb_position
-	rotary_poti_register_callback(&poti,
+	rotary_poti_register_callback(&rp,
 	                              ROTARY_POTI_CALLBACK_POSITION,
 	                              (void *)cb_position,
 	                              NULL);

@@ -1,10 +1,10 @@
-import com.tinkerforge.BrickletRotaryPoti;
 import com.tinkerforge.IPConnection;
+import com.tinkerforge.BrickletRotaryPoti;
 
 public class ExampleSimple {
 	private static final String HOST = "localhost";
 	private static final int PORT = 4223;
-	private static final String UID = "ABC"; // Change to your UID
+	private static final String UID = "XYZ"; // Change to your UID
 
 	// Note: To make the example code cleaner we do not handle exceptions. Exceptions you
 	//       might normally want to catch are described in the documentation
@@ -17,7 +17,6 @@ public class ExampleSimple {
 
 		// Get current position (return value has range -150 to 150)
 		short position = rp.getPosition(); // Can throw com.tinkerforge.TimeoutException
-
 		System.out.println("Position: " + position);
 
 		System.out.println("Press key to exit"); System.in.read();
