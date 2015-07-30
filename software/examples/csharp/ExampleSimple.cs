@@ -14,7 +14,7 @@ class Example
 		ipcon.Connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Get current position of poti (return value has range -150 to 150) 
+		// Get current position (range is -150 to 150)
 		short position = rp.GetPosition();
 		System.Console.WriteLine("Position: " + position);
 

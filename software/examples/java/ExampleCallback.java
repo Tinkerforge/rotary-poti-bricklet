@@ -20,7 +20,7 @@ public class ExampleCallback {
 		//       if the position has changed since the last call!
 		rp.setPositionCallbackPeriod(50);
 
-		// Add position listener
+		// Add position listener (parameter has range -150 to 150)
 		rp.addPositionListener(new BrickletRotaryPoti.PositionListener() {
 			public void position(short position) {
 				System.out.println("Position: " + position);

@@ -15,7 +15,7 @@ public class ExampleSimple {
 		ipcon.connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Get current position (return value has range -150 to 150)
+		// Get current position (range is -150 to 150)
 		short position = rp.getPosition(); // Can throw com.tinkerforge.TimeoutException
 		System.out.println("Position: " + position);
 
