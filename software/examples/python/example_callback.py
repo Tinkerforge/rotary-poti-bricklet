@@ -6,7 +6,7 @@ PORT = 4223
 UID = "XYZ" # Change to your UID
 
 from tinkerforge.ip_connection import IPConnection
-from tinkerforge.bricklet_rotary_poti import RotaryPoti
+from tinkerforge.bricklet_rotary_poti import BrickletRotaryPoti
 
 # Callback function for position callback (parameter has range -150 to 150)
 def cb_position(position):
@@ -14,7 +14,7 @@ def cb_position(position):
 
 if __name__ == "__main__":
     ipcon = IPConnection() # Create IP connection
-    rp = RotaryPoti(UID, ipcon) # Create device object
+    rp = BrickletRotaryPoti(UID, ipcon) # Create device object
 
     ipcon.connect(HOST, PORT) # Connect to brickd
     # Don't use device before ipcon is connected
