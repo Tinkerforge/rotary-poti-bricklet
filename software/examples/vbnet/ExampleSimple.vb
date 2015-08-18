@@ -3,18 +3,17 @@ Imports Tinkerforge
 Module ExampleSimple
     Const HOST As String = "localhost"
     Const PORT As Integer = 4223
-    Const UID As String = "6cQ" ' Change to your UID
+    Const UID As String = "XYZ" ' Change to your UID
 
     Sub Main()
         Dim ipcon As New IPConnection() ' Create IP connection
-        Dim poti As New BrickletRotaryPoti(UID, ipcon) ' Create device object
+        Dim rp As New BrickletRotaryPoti(UID, ipcon) ' Create device object
 
         ipcon.Connect(HOST, PORT) ' Connect to brickd
         ' Don't use device before ipcon is connected
 
-        ' Get current position of poti (return value has range -150 to 150)
-        Dim position As Short = poti.GetPosition()
-
+        ' Get current position (range is -150 to 150)
+        Dim position As Short = rp.GetPosition()
         System.Console.WriteLine("Position: " + position.ToString())
 
         System.Console.WriteLine("Press key to exit")
