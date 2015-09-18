@@ -8,17 +8,16 @@ use Tinkerforge\BrickletRotaryPoti;
 
 const HOST = 'localhost';
 const PORT = 4223;
-const UID = 'ABC'; // Change to your UID
+const UID = 'XYZ'; // Change to your UID
 
 $ipcon = new IPConnection(); // Create IP connection
-$poti = new BrickletRotaryPoti(UID, $ipcon); // Create device object
+$rp = new BrickletRotaryPoti(UID, $ipcon); // Create device object
 
 $ipcon->connect(HOST, PORT); // Connect to brickd
 // Don't use device before ipcon is connected
 
-// Get current position of poti (return value has range -150 to 150)
-$position = $poti->getPosition();
-
+// Get current position (range is -150 to 150)
+$position = $rp->getPosition();
 echo "Position: $position\n";
 
 echo "Press key to exit\n";

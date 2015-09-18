@@ -1,13 +1,16 @@
 #!/bin/sh
-# connects to localhost:4223 by default, use --host and --port to change it
+# Connects to localhost:4223 by default, use --host and --port to change this
 
-# change to your UID
-uid=XYZ
+uid=XYZ # Change to your UID
 
-# set period for position callback to 0.05s (50ms)
-# note: the position callback is only called every second if the
-#       position has changed since the last call!
+# Handle incoming position callbacks (parameter has range -150 to 150)
+tinkerforge dispatch rotary-poti-bricklet $uid position &
+
+# Set period for position callback to 0.05s (50ms)
+# Note: The position callback is only called every 0.05 seconds
+#       if the position has changed since the last call!
 tinkerforge call rotary-poti-bricklet $uid set-position-callback-period 50
 
-# handle incoming position callbacks
-tinkerforge dispatch rotary-poti-bricklet $uid position
+echo "Press key to exit"; read dummy
+
+kill -- -$$ # Stop callback dispatch in background

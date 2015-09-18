@@ -42,13 +42,13 @@ begin
   ipcon.Connect(HOST, PORT);
   { Don't use device before ipcon is connected }
 
+  { Register position callback to procedure PositionCB }
+  rp.OnPosition := {$ifdef FPC}@{$endif}PositionCB;
+
   { Set period for position callback to 0.05s (50ms)
     Note: The position callback is only called every 0.05 seconds
           if the position has changed since the last call! }
   rp.SetPositionCallbackPeriod(50);
-
-  { Register position callback to procedure PositionCB }
-  rp.OnPosition := {$ifdef FPC}@{$endif}PositionCB;
 
   WriteLn('Press key to exit');
   ReadLn;

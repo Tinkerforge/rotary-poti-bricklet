@@ -31,23 +31,23 @@
                     ipcon.disconnect();
                 }
                 ipcon = new Tinkerforge.IPConnection(); // Create IP connection
-                var poti = new Tinkerforge.BrickletRotaryPoti(UID, ipcon); // Create device object
+                var rp = new Tinkerforge.BrickletRotaryPoti(UID, ipcon); // Create device object
                 ipcon.connect(HOST, PORT,
                     function(error) {
-                        textArea.value += 'Error: '+error+ '\n';
+                        textArea.value += 'Error: ' + error + '\n';
                     }
                 ); // Connect to brickd
                 // Don't use device before ipcon is connected
 
                 ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
-                    function(connectReason) {
-                        // Get current position of poti (return value has range -150 to 150)
-                        poti.getPosition(
-                            function(position) {
-                                textArea.value += 'Position: '+position+'\n';
+                    function (connectReason) {
+                        // Get current position (range is -150 to 150)
+                        rp.getPosition(
+                            function (position) {
+                                textArea.value += 'Position: ' + position + '\n';
                             },
-                            function(error) {
-                                textArea.value += 'Error: '+error+'\n';
+                            function (error) {
+                                textArea.value += 'Error: ' + error + '\n';
                             }
                         );
                     }

@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     # Get current position (range is -150 to 150)
     position = rp.get_position()
-    print('Position: ' + str(position))
+    print("Position: " + str(position))
 
-    raw_input('Press key to exit\n') # Use input() in Python 3
+    raw_input("Press key to exit\n") # Use input() in Python 3
     ipcon.disconnect()
