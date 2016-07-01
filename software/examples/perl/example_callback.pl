@@ -5,7 +5,7 @@ use Tinkerforge::BrickletRotaryPoti;
 
 use constant HOST => 'localhost';
 use constant PORT => 4223;
-use constant UID => 'XYZ'; # Change to your UID
+use constant UID => 'XYZ'; # Change XYZ to the UID of your Rotary Poti Bricklet
 
 # Callback subroutine for position callback (parameter has range -150 to 150)
 sub cb_position

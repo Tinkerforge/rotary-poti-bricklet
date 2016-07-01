@@ -1,7 +1,7 @@
 #!/bin/sh
 # Connects to localhost:4223 by default, use --host and --port to change this
 
-uid=XYZ # Change to your UID
+uid=XYZ # Change XYZ to the UID of your Rotary Poti Bricklet
 
 # Handle incoming position callbacks (parameter has range -150 to 150)
 tinkerforge dispatch rotary-poti-bricklet $uid position &

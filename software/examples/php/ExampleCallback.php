@@ -8,7 +8,7 @@ use Tinkerforge\BrickletRotaryPoti;
 
 const HOST = 'localhost';
 const PORT = 4223;
-const UID = 'XYZ'; // Change to your UID
+const UID = 'XYZ'; // Change XYZ to the UID of your Rotary Poti Bricklet
 
 // Callback function for position callback (parameter has range -150 to 150)
 function cb_position($position)

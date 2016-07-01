@@ -5,7 +5,7 @@
 
 #define HOST "localhost"
 #define PORT 4223
-#define UID "XYZ" // Change to your UID
+#define UID "XYZ" // Change XYZ to the UID of your Rotary Poti Bricklet
 
 // Callback function for position callback (parameter has range -150 to 150)
 void cb_position(int16_t position, void *user_data) {

@@ -2,7 +2,7 @@ var Tinkerforge = require('tinkerforge');
 
 var HOST = 'localhost';
 var PORT = 4223;
-var UID = 'XYZ'; // Change to your UID
+var UID = 'XYZ'; // Change XYZ to the UID of your Rotary Poti Bricklet
 
 var ipcon = new Tinkerforge.IPConnection(); // Create IP connection
 var rp = new Tinkerforge.BrickletRotaryPoti(UID, ipcon); // Create device object
