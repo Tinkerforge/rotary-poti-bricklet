@@ -22,7 +22,7 @@ class Example
 		// Don't use device before ipcon is connected
 
 		// Register position callback to function PositionCB
-		rp.Position += PositionCB;
+		rp.PositionCallback += PositionCB;
 
 		// Set period for position callback to 0.05s (50ms)
 		// Note: The position callback is only called every 0.05 seconds
