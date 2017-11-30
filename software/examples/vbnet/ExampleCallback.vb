@@ -19,7 +19,7 @@ Module ExampleCallback
         ' Don't use device before ipcon is connected
 
         ' Register position callback to subroutine PositionCB
-        AddHandler rp.Position, AddressOf PositionCB
+        AddHandler rp.PositionCallback, AddressOf PositionCB
 
         ' Set period for position callback to 0.05s (50ms)
         ' Note: The position callback is only called every 0.05 seconds

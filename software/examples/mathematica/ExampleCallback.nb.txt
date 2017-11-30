@@ -13,7 +13,7 @@ ipcon@Connect[host,port]
 (*Callback function for position callback (parameter has range -150 to 150)*)
 PositionCB[sender_,position_]:=
  Print["Position: "<>ToString[position]]
-AddEventHandler[rp@Position,PositionCB]
+AddEventHandler[rp@PositionCallback,PositionCB]
 
 (*Set period for position callback to 0.05s (50ms)*)
 (*Note: The position callback is only called every 0.05 seconds*)
