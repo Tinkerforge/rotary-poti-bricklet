@@ -3,5 +3,5 @@
 
 uid=XYZ # Change XYZ to the UID of your Rotary Poti Bricklet
 
-# Get current position (range is -150 to 150)
+# Get current position
 tinkerforge call rotary-poti-bricklet $uid get-position

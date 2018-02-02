@@ -13,9 +13,9 @@ my $rp = Tinkerforge::BrickletRotaryPoti->new(&UID, $ipcon); # Create device obj
 $ipcon->connect(&HOST, &PORT); # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Get current position (range is -150 to 150)
+# Get current position
 my $position = $rp->get_position();
-print "Position: $position\n";
+print "Position: $position\n"; # Range: -150 to 150
 
 print "Press key to exit\n";
 <STDIN>;

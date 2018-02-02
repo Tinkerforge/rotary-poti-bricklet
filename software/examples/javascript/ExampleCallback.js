@@ -25,9 +25,9 @@ ipcon.on(Tinkerforge.IPConnection.CALLBACK_CONNECTED,
 
 // Register position callback
 rp.on(Tinkerforge.BrickletRotaryPoti.CALLBACK_POSITION,
-    // Callback function for position callback (parameter has range -150 to 150)
+    // Callback function for position callback
     function (position) {
-        console.log('Position: ' + position);
+        console.log('Position: ' + position); // Range: -150 to 150
     }
 );
 

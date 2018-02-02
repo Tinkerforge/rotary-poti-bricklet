@@ -24,10 +24,10 @@ const
 var
   e: TExample;
 
-{ Callback procedure for position callback (parameter has range -150 to 150) }
+{ Callback procedure for position callback }
 procedure TExample.PositionCB(sender: TBrickletRotaryPoti; const position: smallint);
 begin
-  WriteLn(Format('Position: %d', [position]));
+  WriteLn(Format('Position: %d', [position])); { Range: -150 to 150 }
 end;
 
 procedure TExample.Execute;

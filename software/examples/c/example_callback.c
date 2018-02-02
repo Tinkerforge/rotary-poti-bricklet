@@ -7,11 +7,11 @@
 #define PORT 4223
 #define UID "XYZ" // Change XYZ to the UID of your Rotary Poti Bricklet
 
-// Callback function for position callback (parameter has range -150 to 150)
+// Callback function for position callback
 void cb_position(int16_t position, void *user_data) {
 	(void)user_data; // avoid unused parameter warning
 
-	printf("Position: %d\n", position);
+	printf("Position: %d\n", position); // Range: -150 to 150
 }
 
 int main(void) {

@@ -11,9 +11,9 @@ function octave_example_simple()
     ipcon.connect(HOST, PORT); % Connect to brickd
     % Don't use device before ipcon is connected
 
-    % Get current position (range is -150 to 150)
+    % Get current position
     position = rp.getPosition();
-    fprintf("Position: %d\n", java2int(position));
+    fprintf("Position: %d\n", java2int(position)); % Range: -150 to 150
 
     input("Press key to exit\n", "s");
     ipcon.disconnect();

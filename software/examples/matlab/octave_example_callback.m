@@ -23,9 +23,9 @@ function octave_example_callback()
     ipcon.disconnect();
 end
 
-% Callback function for position callback (parameter has range -150 to 150)
+% Callback function for position callback
 function cb_position(e)
-    fprintf("Position: %d\n", java2int(e.position));
+    fprintf("Position: %d\n", java2int(e.position)); % Range: -150 to 150
 end
 
 function int = java2int(value)

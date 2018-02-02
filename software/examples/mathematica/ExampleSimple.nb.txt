@@ -10,8 +10,8 @@ ipcon=NETNew["Tinkerforge.IPConnection"]
 rp=NETNew["Tinkerforge.BrickletRotaryPoti",uid,ipcon]
 ipcon@Connect[host,port]
 
-(*Get current position (range is -150 to 150)*)
-Print["Position: "<>ToString[rp@GetPosition[]]]
+(*Get current position*)
+Print["Position: "<>ToString[rp@GetPosition[]]](*Range: -150 to 150*)
 
 (*Clean up*)
 ipcon@Disconnect[]

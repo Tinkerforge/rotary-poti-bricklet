@@ -7,10 +7,10 @@ class Example
 	private static int PORT = 4223;
 	private static string UID = "XYZ"; // Change XYZ to the UID of your Rotary Poti Bricklet
 
-	// Callback function for position callback (parameter has range -150 to 150)
+	// Callback function for position callback
 	static void PositionCB(BrickletRotaryPoti sender, short position)
 	{
-		Console.WriteLine("Position: " + position);
+		Console.WriteLine("Position: " + position); // Range: -150 to 150
 	}
 
 	static void Main()

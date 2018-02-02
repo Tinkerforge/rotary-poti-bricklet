@@ -10,9 +10,9 @@ ipcon=NETNew["Tinkerforge.IPConnection"]
 rp=NETNew["Tinkerforge.BrickletRotaryPoti",uid,ipcon]
 ipcon@Connect[host,port]
 
-(*Callback function for position callback (parameter has range -150 to 150)*)
+(*Callback function for position callback*)
 PositionCB[sender_,position_]:=
- Print["Position: "<>ToString[position]]
+ Print["Position: "<>ToString[position]](*Range: -150 to 150*)
 AddEventHandler[rp@PositionCallback,PositionCB]
 
 (*Set period for position callback to 0.05s (50ms)*)

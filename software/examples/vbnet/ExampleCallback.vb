@@ -6,9 +6,9 @@ Module ExampleCallback
     Const PORT As Integer = 4223
     Const UID As String = "XYZ" ' Change XYZ to the UID of your Rotary Poti Bricklet
 
-    ' Callback subroutine for position callback (parameter has range -150 to 150)
+    ' Callback subroutine for position callback
     Sub PositionCB(ByVal sender As BrickletRotaryPoti, ByVal position As Short)
-        Console.WriteLine("Position: " + position.ToString())
+        Console.WriteLine("Position: " + position.ToString()) ' Range: -150 to 150
     End Sub
 
     Sub Main()

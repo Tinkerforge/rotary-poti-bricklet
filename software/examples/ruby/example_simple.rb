@@ -16,9 +16,9 @@ rp = BrickletRotaryPoti.new UID, ipcon # Create device object
 ipcon.connect HOST, PORT # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Get current position (range is -150 to 150)
+# Get current position
 position = rp.get_position
-puts "Position: #{position}"
+puts "Position: #{position}" # Range: -150 to 150
 
 puts 'Press key to exit'
 $stdin.gets

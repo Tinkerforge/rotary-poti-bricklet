@@ -36,9 +36,9 @@ begin
   ipcon.Connect(HOST, PORT);
   { Don't use device before ipcon is connected }
 
-  { Get current position (range is -150 to 150) }
+  { Get current position }
   position := rp.GetPosition;
-  WriteLn(Format('Position: %d', [position]));
+  WriteLn(Format('Position: %d', [position])); { Range: -150 to 150 }
 
   WriteLn('Press key to exit');
   ReadLn;

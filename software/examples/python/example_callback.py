@@ -8,9 +8,9 @@ UID = "XYZ" # Change XYZ to the UID of your Rotary Poti Bricklet
 from tinkerforge.ip_connection import IPConnection
 from tinkerforge.bricklet_rotary_poti import BrickletRotaryPoti
 
-# Callback function for position callback (parameter has range -150 to 150)
+# Callback function for position callback
 def cb_position(position):
-    print("Position: " + str(position))
+    print("Position: " + str(position)) # Range: -150 to 150
 
 if __name__ == "__main__":
     ipcon = IPConnection() # Create IP connection

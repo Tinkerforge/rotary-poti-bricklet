@@ -16,9 +16,9 @@ $rp = new BrickletRotaryPoti(UID, $ipcon); // Create device object
 $ipcon->connect(HOST, PORT); // Connect to brickd
 // Don't use device before ipcon is connected
 
-// Get current position (range is -150 to 150)
+// Get current position
 $position = $rp->getPosition();
-echo "Position: $position\n";
+echo "Position: $position\n"; // Range: -150 to 150
 
 echo "Press key to exit\n";
 fgetc(fopen('php://stdin', 'r'));

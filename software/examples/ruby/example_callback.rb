@@ -16,9 +16,9 @@ rp = BrickletRotaryPoti.new UID, ipcon # Create device object
 ipcon.connect HOST, PORT # Connect to brickd
 # Don't use device before ipcon is connected
 
-# Register position callback (parameter has range -150 to 150)
+# Register position callback
 rp.register_callback(BrickletRotaryPoti::CALLBACK_POSITION) do |position|
-  puts "Position: #{position}"
+  puts "Position: #{position}" # Range: -150 to 150
 end
 
 # Set period for position callback to 0.05s (50ms)

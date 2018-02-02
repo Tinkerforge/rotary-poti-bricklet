@@ -10,10 +10,10 @@ const HOST = 'localhost';
 const PORT = 4223;
 const UID = 'XYZ'; // Change XYZ to the UID of your Rotary Poti Bricklet
 
-// Callback function for position callback (parameter has range -150 to 150)
+// Callback function for position callback
 function cb_position($position)
 {
-    echo "Position: $position\n";
+    echo "Position: $position\n"; // Range: -150 to 150
 }
 
 $ipcon = new IPConnection(); // Create IP connection

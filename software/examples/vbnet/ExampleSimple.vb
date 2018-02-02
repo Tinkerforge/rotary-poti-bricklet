@@ -13,9 +13,9 @@ Module ExampleSimple
         ipcon.Connect(HOST, PORT) ' Connect to brickd
         ' Don't use device before ipcon is connected
 
-        ' Get current position (range is -150 to 150)
+        ' Get current position
         Dim position As Short = rp.GetPosition()
-        Console.WriteLine("Position: " + position.ToString())
+        Console.WriteLine("Position: " + position.ToString()) ' Range: -150 to 150
 
         Console.WriteLine("Press key to exit")
         Console.ReadLine()

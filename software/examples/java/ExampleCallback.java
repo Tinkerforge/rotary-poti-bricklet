@@ -17,10 +17,10 @@ public class ExampleCallback {
 		ipcon.connect(HOST, PORT); // Connect to brickd
 		// Don't use device before ipcon is connected
 
-		// Add position listener (parameter has range -150 to 150)
+		// Add position listener
 		rp.addPositionListener(new BrickletRotaryPoti.PositionListener() {
 			public void position(short position) {
-				System.out.println("Position: " + position);
+				System.out.println("Position: " + position); // Range: -150 to 150
 			}
 		});
 

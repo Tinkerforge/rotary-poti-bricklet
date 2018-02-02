@@ -50,9 +50,9 @@
 
                 // Register position callback
                 rp.on(Tinkerforge.BrickletRotaryPoti.CALLBACK_POSITION,
-                    // Callback function for position callback (parameter has range -150 to 150)
+                    // Callback function for position callback
                     function (position) {
-                        textArea.value += 'Position: ' + position + '\n';
+                        textArea.value += 'Position: ' + position + '\n'; // Range: -150 to 150
                         textArea.scrollTop = textArea.scrollHeight;
                     }
                 );

@@ -23,14 +23,14 @@ int main(void) {
 	}
 	// Don't use device before ipcon is connected
 
-	// Get current position (range is -150 to 150)
+	// Get current position
 	int16_t position;
 	if(rotary_poti_get_position(&rp, &position) < 0) {
 		fprintf(stderr, "Could not get position, probably timeout\n");
 		return 1;
 	}
 
-	printf("Position: %d\n", position);
+	printf("Position: %d\n", position); // Range: -150 to 150
 
 	printf("Press key to exit\n");
 	getchar();
