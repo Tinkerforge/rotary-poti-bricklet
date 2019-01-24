@@ -4,6 +4,7 @@ setup:
 	# Handle incoming position callbacks
 	subscribe to tinkerforge/callback/rotary_poti_bricklet/XYZ/position
 	publish '{"register": true}' to tinkerforge/register/rotary_poti_bricklet/XYZ/position # Register position callback
+	
 	# Set period for position callback to 0.05s (50ms)
 	# Note: The position callback is only called every 0.05 seconds
 	#       if the position has changed since the last call!
