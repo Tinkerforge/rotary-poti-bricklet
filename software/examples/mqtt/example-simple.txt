@@ -1,0 +1,8 @@
+
+
+# Change XYZ to the UID of your Rotary Poti Bricklet
+
+setup:
+	# Get current position
+	subscribe to tinkerforge/response/rotary_poti/XYZ/get_position
+	publish '' to tinkerforge/request/rotary_poti_bricklet/XYZ/get_position 
