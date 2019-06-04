@@ -32,8 +32,8 @@
 #define MAX_ROTATIONAL_ANGLE 300
 #define POTI_AVERAGE 50
 
-#define SIMPLE_UNIT_POSITION 0
-#define SIMPLE_UNIT_ANALOG_VALUE 1
+#define SIMPLE_UNIT_ANALOG_VALUE 0
+#define SIMPLE_UNIT_POSITION 1
 
 const SimpleMessageProperty smp[] = {
 	{SIMPLE_UNIT_POSITION, SIMPLE_TRANSFER_VALUE, SIMPLE_DIRECTION_GET}, // TYPE_GET_POSITION
@@ -51,8 +51,8 @@ const SimpleMessageProperty smp[] = {
 };
 
 const SimpleUnitProperty sup[] = {
-	{position_from_analog_value, SIMPLE_SIGNEDNESS_INT, FID_POSITION, FID_POSITION_REACHED, SIMPLE_UNIT_ANALOG_VALUE}, // position
 	{analog_value_from_mc, SIMPLE_SIGNEDNESS_UINT, FID_ANALOG_VALUE, FID_ANALOG_VALUE_REACHED, SIMPLE_UNIT_ANALOG_VALUE}, // analog value
+	{position_from_analog_value, SIMPLE_SIGNEDNESS_INT, FID_POSITION, FID_POSITION_REACHED, SIMPLE_UNIT_ANALOG_VALUE}, // position
 };
 
 const uint8_t smp_length = sizeof(smp);
@@ -83,22 +83,34 @@ int32_t analog_value_from_mc(const int32_t value) {
 }
 
 int32_t position_from_analog_value(const int32_t value) {
+	/*
+	 * If this is the first tick, we need to calculate an average, but there are not
+	 * POTI_AVERAGE values available. Return the current value (rounded and scaled).
+	 */
 	BC->poti_avg_sum += value;
-
-	if(BC->tick % POTI_AVERAGE == 0) {
-		BC->poti_avg_sum += POTI_AVERAGE*(MAX_ADC_VALUE/MAX_ROTATIONAL_ANGLE)/2;
-
-		if(BC->poti_avg_sum > MAX_ADC_VALUE*POTI_AVERAGE) {
-			BC->poti_avg_sum = MAX_ADC_VALUE*POTI_AVERAGE;
-		}
-
+	if(BC->tick == 0) {
 		BC->poti_avg = MAX_ROTATIONAL_ANGLE/2 -
-				       SCALE(BC->poti_avg_sum/POTI_AVERAGE,
-                             0,
-                             MAX_ADC_VALUE,
-                             0,
-                             MAX_ROTATIONAL_ANGLE);
-		BC->poti_avg_sum = 0;
+		               SCALE(value + (MAX_ADC_VALUE/MAX_ROTATIONAL_ANGLE)/2,
+		                     0,
+		                     MAX_ADC_VALUE,
+		                     0,
+		                     MAX_ROTATIONAL_ANGLE);
+	} else {
+		if(BC->tick % POTI_AVERAGE == 0) {
+			BC->poti_avg_sum += POTI_AVERAGE*(MAX_ADC_VALUE/MAX_ROTATIONAL_ANGLE)/2;
+
+			if(BC->poti_avg_sum > MAX_ADC_VALUE*POTI_AVERAGE) {
+				BC->poti_avg_sum = MAX_ADC_VALUE*POTI_AVERAGE;
+			}
+
+			BC->poti_avg = MAX_ROTATIONAL_ANGLE/2 -
+			               SCALE(BC->poti_avg_sum/POTI_AVERAGE,
+			                     0,
+			                     MAX_ADC_VALUE,
+			                     0,
+			                     MAX_ROTATIONAL_ANGLE);
+			                     BC->poti_avg_sum = 0;
+		}
 	}
 
 	return BC->poti_avg;
