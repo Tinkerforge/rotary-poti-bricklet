@@ -27,5 +27,5 @@ if __name__ == "__main__":
     #       if the position has changed since the last call!
     rp.set_position_callback_period(50)
 
-    raw_input("Press key to exit\n") # Use input() in Python 3
+    input("Press key to exit\n") # Use raw_input() in Python 2
     ipcon.disconnect()
