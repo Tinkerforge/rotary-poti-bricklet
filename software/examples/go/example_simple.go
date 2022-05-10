@@ -20,7 +20,7 @@ func main() {
 
 	// Get current position.
 	position, _ := rp.GetPosition()
-	fmt.Printf("Position: \n", position) // Range: -150 to 150
+	fmt.Printf("Position: %d\n", position) // Range: -150 to 150
 
 	fmt.Print("Press enter to exit.")
 	fmt.Scanln()
